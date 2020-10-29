@@ -24,6 +24,7 @@ Z key to rotate block
 #include  <Windows.h>
 #include <thread>
 #include <vector>
+
 using namespace std;
 
 wstring tetrisBlock[7]; //there are 7 different blocks in tetris
@@ -139,7 +140,10 @@ int main()
 
 	RECT ConsoleRect;
 	GetWindowRect(console, &ConsoleRect);
-	MoveWindow(console, ConsoleRect.left, ConsoleRect.top, 675, 600, TRUE); //scale for everyone
+
+	//resize console window
+	MoveWindow(console, 0, 0, 0, 0, TRUE);
+	MoveWindow(console, 0, 0, 675, 600, TRUE);
 
 	
 
